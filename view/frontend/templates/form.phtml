@@ -1,0 +1,13 @@
+<?php $order = $this->getOrder(); ?>
+<form method="POST" id="privat24-form" action="https://api.privatbank.ua/p24api/ishop">
+    <input type="hidden" name="amt" value="<?php echo $order->getGrandTotal() ?>"/>
+    <input type="hidden" name="ccy" value="<?php echo $order->getOrderCurrencyCode() ?>"/>
+    <input type="hidden" name="merchant" value="<?php echo $this->getHelper()->getMerchantId() ?>"/>
+    <input type="hidden" name="order" value="<?php echo $order->getIncrementId() ?>"/>
+    <input type="hidden" name="details" value="<?php echo $this->getHelper()->getPrivat24Description($order) ?>"/>
+    <input type="hidden" name="ext_details" value="<?php echo $this->getHelper()->getPrivat24Description($order) ?>"/>
+    <input type="hidden" name="pay_way" value="privat24"/>
+    <input type="hidden" name="return_url" value="<?php echo $this->getHelper()->getPrivat24ReturnUrl() ?>"/>
+    <input type="hidden" name="server_url" value="<?php echo $this->getHelper()->getServerUrl() ?>"/>
+    <input type="submit"/>
+</form>

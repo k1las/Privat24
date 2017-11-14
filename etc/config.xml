@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <privat24>
+                <payment_action>authorize_capture</payment_action>
+                <model>Privat24\Privat24\Model\PaymentMethod</model>
+                <active>1</active>
+                <title>Privat24</title>
+                <order_status>pending</order_status>
+                <is_security>1</is_security>
+            </privat24>
+        </payment>
+    </default>
+</config>
